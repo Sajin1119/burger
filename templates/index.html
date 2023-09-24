@@ -1,0 +1,336 @@
+{% extends "base.html" %}
+{% load static %}
+{% block home %}active{% endblock home %}
+
+{% block slider %}
+      <section class="slider_section">
+        <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-7 col-lg-6">
+                    <div class="detail-box">
+                      <h1> Welcome to Burger shop </h1>
+                      <h2>– Where Taste Meets Tradition!</h2>
+
+                      <div class="btn-box">
+                        <a href="/about" class="btn1"> About Us</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-7 col-lg-6">
+                    <div class="detail-box">
+                      <h1> Welcome to Burger shop </h1>
+                      <h2>– Where Taste Meets Tradition!</h2>                    
+                      <div class="btn-box">
+                        <a href="/about" class="btn1"> About Us</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-7 col-lg-6">
+                    <div class="detail-box">
+                      <h1> Welcome to Burger shop </h1>
+                      <h2>– Where Taste Meets Tradition!</h2>   
+                      <div class="btn-box">
+                        <a href="/about" class="btn1"> About Us</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% for message in messages %}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <strong>{{message}}</strong>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+          </div>
+          <div class="container">
+            <ol class="carousel-indicators">
+              <li
+                data-target="#customCarousel1"
+                data-slide-to="0"
+                class="active"
+              ></li>
+              <li data-target="#customCarousel1" data-slide-to="1"></li>
+              <li data-target="#customCarousel1" data-slide-to="2"></li>
+            </ol>
+          </div>
+        </div>
+      </section>
+{% endblock slider %}
+      <section class="slider_section">
+        <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-7 col-lg-6">
+                    <div class="detail-box">
+                      <h1> Welcome to Burger shop </h1>
+                      <h2>– Where Taste Meets Tradition!</h2>
+
+                      <div class="btn-box">
+                        <a href="/about" class="btn1"> About Us</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-7 col-lg-6">
+                    <div class="detail-box">
+                      <h1> Welcome to Burger shop </h1>
+                      <h2>– Where Taste Meets Tradition!</h2>                    
+                      <div class="btn-box">
+                        <a href="/about" class="btn1"> About Us</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-7 col-lg-6">
+                    <div class="detail-box">
+                      <h1> Welcome to Burger shop </h1>
+                      <h2>– Where Taste Meets Tradition!</h2>   
+                      <div class="btn-box">
+                        <a href="/about" class="btn1"> About Us</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% for message in messages %}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <strong>{{message}}</strong>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+          </div>
+          <div class="container">
+            <ol class="carousel-indicators">
+              <li
+                data-target="#customCarousel1"
+                data-slide-to="0"
+                class="active"
+              ></li>
+              <li data-target="#customCarousel1" data-slide-to="1"></li>
+              <li data-target="#customCarousel1" data-slide-to="2"></li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+
+{% block content %}
+
+
+  <div class="container">
+    <div class="heading_container heading_center">
+      <h2 class="offer_section">Todays Offer</h2>
+    </div>
+  </div>
+</section>
+
+
+<div class="carousel-wrap row">
+  <div class="owl-carousel client_owl-carousel">
+      
+  </div>
+</div>
+<section class="offer_section layout_padding-bottom">
+  <div class="offer_container">
+    <div class="container">
+      <div class="row">
+        {% for all in alloffer %}
+
+        <div class="col-md-6  ">
+          <div class="box ">
+            <div class="img-box">
+              <img src="{{all.img.url}}" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                {{all.title}}
+              </h5>
+              <p>
+                {{all.des}}
+              <p/>
+              <h6>
+                <span>{{all.offPercentage}}%</span> Off
+              </h6>
+
+            </div>
+          </div>
+        </div>
+
+        {% endfor %}
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- food section -->
+
+    <section class="food_section layout_padding-bottom">
+      <div class="container">
+        <div class="heading_container heading_center">
+          <h2>About Us</h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- end food section -->
+
+    <!-- about section -->
+
+    <section class="about_section layout_padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="img-box">
+              <img src="{% static 'images/about-img.png ' %}" alt="" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="detail-box">
+              <div class="heading_container">
+                <h2>We Make Burgers</h2>
+              </div>
+              <p>
+                At <span style="color: yellow;">Burger shop</span>, we are passionate about crafting the perfect burger experience for you. Our journey began with a simple desire: to create mouthwatering, crave-worthy burgers that pay homage to the timeless American classic while infusing innovative flavors and a commitment to quality.
+Our Story:
+
+Founded in 2017.....
+              </p>
+              <a href="/about"> Read More... </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- end about section -->
+
+    <!-- book section -->
+    <section class="book_section layout_padding">
+      <div class="container">
+        <div class="heading_container">
+          <h2>
+            Book A Table
+          </h2>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form_container">
+              <form action="/book" method="POST">
+                {% csrf_token %}  
+                <div>
+                  <input type="text" class="form-control" placeholder="Your Name" name="name" required/>
+                </div>
+                <div>
+                  <input type="text" class="form-control" placeholder="Phone Number" name="phonenum"required/>
+                </div>
+                <div>
+                  <input type="email" class="form-control" placeholder="Your Email" name="email" required/>
+                </div>
+                <div>
+                  <select class="form-control nice-select wide" name="persons" required>
+                    <option value="date" disabled selected>
+                      How many persons?
+                    </option>
+                    <option value="2">
+                      2
+                    </option>
+                    <option value="3">
+                      3
+                    </option>
+                    <option value="4">
+                      4
+                    </option>
+                    <option value="5">
+                      5
+                    </option>
+                    <option value="5+">
+                      5+
+                    </option>
+                    <option value="10">
+                      10+
+                    </option>
+                  </select>
+                </div>
+                <div>
+                  <input type="date" class="form-control" name="date">
+                </div>
+                <div class="btn_box">
+                  <button type="submit">
+                    Book Now
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="map_container ">
+              <div id="googleMap"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end book section -->
+
+    <!-- client section -->
+
+    <section class="client_section layout_padding-bottom">
+      <div class="container">
+        <div class="heading_container heading_center psudo_white_primary mb_45">
+          <h2>What Says Our Customers</h2>
+        </div>
+        <div class="carousel-wrap row">
+          <div class="owl-carousel client_owl-carousel">
+              {% for post in alltest %}
+              <div class="box">
+                <div class="detail-box">
+                  <h6>
+                    {{post.name}}
+                </h6>
+                  <p>{{post.product}}</p>
+                  <p>{{post.desc}}</p>
+                </div>
+                <div class="img-box">
+                  <img src="{{post.img.url}}" alt="" class="box-img" />
+                </div>
+              </div>
+              {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- end client section -->
+{% endblock content %}

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static %}
+{% block slider %}
+<section class="book_section layout_padding">
+  <div class="container">
+    <div class="text-center pb-5">
+      <h2>
+        <b></b>
+      </h2>
+    </div>
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4 card bg-light p-4">
+        {% for message in messages %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <strong>{{message}}</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+        <h3 class="text-center pb-3">Signup</h3>
+        <div class="form_container">
+          <form action="/auth/signup/" method="POST">
+            {% csrf_token %}  
+            <div>
+              <input type="text" class="form-control" placeholder="Your Name" name="name" required/>
+            </div>
+            <div>
+              <input type="number" class="form-control" placeholder="Phone Number" name="phonenum"required/>
+            </div>
+            <div>
+              <input type="email" class="form-control" placeholder="Your Email" name="email" required/>
+            </div>
+            <div>
+              <input type="password" class="form-control" placeholder="password" name="pass1" required/>
+            </div>
+            <div>
+              <input type="password" class="form-control" placeholder="Confirm password" name="pass2" required/>
+            </div>
+
+            <div class="btn_box text-center">
+              <button type="submit">
+                Signup
+              </button>
+              <p class="pt-3">already have a account? <a href="/auth/login" class="text-warning">Login</a></p>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-4"></div>
+
+    </div>
+  </div>
+</section>
+{% endblock slider %}
+

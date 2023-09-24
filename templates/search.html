@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+{% block menu %}active{% endblock menu %}
+{% block content %}
+  <section class="food_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Our Menu
+        </h2>
+      </div>
+<br>
+<h3>  <p>Search query: {{ query }}</p></h3>
+{% if allpost %}
+        <div class="row grid">
+          {% for post in allpost %}
+          <div class="col-sm-6 col-lg-4 all pizza">
+            <div class="box">
+              <div>
+                <div class="img-box">
+                  <img src="{{post.img.url}}" alt="" />
+                </div>
+                <div class="detail-box">
+                  <h5>{{post.title}}</h5>
+                  <p>
+                    {{post.desc}}
+                  </p>
+                  <div class="options">
+                    <h6>Rs.{{post.mrp}}</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+
+        </div>
+        {% else %}
+<p>No results found.</p>
+{% endif %}
+      </div>
+
+  </section>
+
+  <!-- end food section -->
+
+  {% endblock content %}
+  

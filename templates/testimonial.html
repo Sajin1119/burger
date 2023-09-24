@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load static %}
+{% block testimonial %}active{% endblock testimonial %}
+
+{% block slider %}
+      <section class="slider_section">
+              <div class="container">
+                <class="row">
+                  <div class="col-md-8 col-lg-8">
+                    <div class="detail-box">
+                      <h1> Welcome to Burger shop </h1>
+                      <h2>– Post a Review <span class="text-warning">⭣</span></h2>
+
+                      <div class="btn-box">
+                        <a href="#test" class="btn1">Write about Us</a>
+                      </div>
+                    </div>
+                  </div>
+            {% for message in messages %}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <strong>{{message}}</strong>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+        </div>
+      </section>
+{% endblock slider %}
+{% block content %}
+
+  <!-- book section -->
+  <section class="book_section layout_padding">
+    <div class="container" id="test">
+
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="heading_container">
+                <h2>
+                  Post a Review
+                </h2>
+              </div>
+          <div class="form_container">
+            <form action="/testimonial" method="POST">
+              {% csrf_token %}  
+              <div>
+                <input type="text" class="form-control" placeholder="Your Name" name="name" required/>
+              </div>
+              <div>
+                <label for="image">Upload your image</label>
+              </div>
+              <br>
+              <div>
+                <input type="file" id="myfile" name="image">
+              </div>
+              <br>
+
+              <div>
+                <input type="text" class="form-control" placeholder="Product name" name="product" required/>
+              </div>
+              <div>
+                <input type="text" class="form-control" placeholder="Description" name="desc" required/>
+              </div>
+              <div class="btn_box">
+                <button type="submit">
+                  Submit Review
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-4"></div>
+
+      </div>
+    </div>
+  </section>
+  <!-- end book section -->
+
+  {% endblock content %}

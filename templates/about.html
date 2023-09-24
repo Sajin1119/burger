@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% load static %}
+{% block about %}active{% endblock about %}
+{% block slider %}
+      <section class="slider_section">
+              <div class="container">
+                <class="row">
+                  <div class="col-md-8 col-lg-8">
+                    <div class="detail-box">
+                      <h1> Welcome to Burger shop </h1>
+                      <h2>– About Us <span class="text-warning">⭣</span></h2>
+
+                      <div class="btn-box">
+                        <a href="#about" class="btn1">About Us</a>
+                      </div>
+                    </div>
+                  </div>
+            {% for message in messages %}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <strong>{{message}}</strong>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+        </div>
+      </section>
+{% endblock slider %}
+{% block content %}
+  
+    <!-- about section -->
+  
+    <section id="about" class="about_section layout_padding">
+      <div class="container" >
+  
+        <div class="row">
+          <div class="col-md-12">
+            <div class="detail-box">
+              <div class="heading_container">
+                <h2>
+                  We Make Burgers
+                </h2>
+              </div>
+              <p>
+                At Burger Shop ,we are passionate about crafting the perfect burger experience for you. Our journey began with a simple desire: to create mouthwatering, crave-worthy burgers that pay homage to the timeless American classic while infusing innovative flavors and a commitment to quality.
+
+Our Story:
+
+Founded in [Year of Establishment], [Your Burger Shop's Name] is the brainchild of a group of food enthusiasts who decided to turn their love for burgers into a culinary adventure. With a vision of bringing together the best ingredients, culinary expertise, and a welcoming atmosphere, we embarked on a quest to redefine the burger-eating experience.
+
+Our Commitment to Quality:
+
+Quality is at the heart of everything we do. We source the finest, locally-sourced ingredients to ensure each bite is a burst of freshness and flavor. Our beef patties are made from 100% premium, grass-fed Angus beef, handcrafted and seasoned to perfection. We take pride in our commitment to sustainable and eco-friendly practices, from our packaging to our sourcing, to minimize our carbon footprint.
+
+
+              </p>
+              <br><br>
+              <p>
+                Our Story:
+
+Founded in [Year of Establishment], [Your Burger Shop's Name] is the brainchild of a group of food enthusiasts who decided to turn their love for burgers into a culinary adventure. With a vision of bringing together the best ingredients, culinary expertise, and a welcoming atmosphere, we embarked on a quest to redefine the burger-eating experience.
+
+Our Commitment to Quality:
+
+Quality is at the heart of everything we do. We source the finest, locally-sourced ingredients to ensure each bite is a burst of freshness and flavor. Our beef patties are made from 100% premium, grass-fed Angus beef, handcrafted and seasoned to perfection. We take pride in our commitment to sustainable and eco-friendly practices, from our packaging to our sourcing, to minimize our carbon footprint.
+              </p>
+<br><br>
+              <p>
+                Our Signature Creations:
+
+At Burger Shop, we believe in the power of creativity. Our menu features a wide array of burger creations that cater to every palate. Whether you're a meat lover, a vegetarian, or looking for a gluten-free option, we have something special just for you. From our classic 'All-American Burger' to the 'Veggie Delight' and 'Beyond Burger,' there's a perfect burger for everyone.
+              </p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- end about section -->
+
+  
+  </body>
+  
+  </html>
+  <!-- end book section -->
+
+  {% endblock content %}
